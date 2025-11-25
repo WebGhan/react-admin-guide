@@ -542,7 +542,8 @@ import ProTable, {type QueryDataParams} from '@/components/pro/ProTable';
 import {type ReactNode, useRef} from 'react';
 import Creator, {type CreatorRef} from '@/views/example/template/components/Creator.tsx';
 import Editor, {type EditorRef} from '@/views/example/template/components/Editor.tsx';
-import {Button, Dropdown, Form, Input} from 'antd';
+import {Button, Dropdown, Form, Input, Space} from 'antd';
+import {EllipsisOutlined, PlusOutlined} from '@ant-design/icons';
 import {PlusOutlined} from '@ant-design/icons';
 import type {ExampleTemplate, ExampleTemplateQueryParams} from '@/types/example/template.ts';
 import {
@@ -609,23 +610,32 @@ function ExampleTemplateView() {
       width: 80,
       fixed: 'right',
       render: (_, record) => (
-        <Dropdown.Button
-          size="small"
-          trigger={['click']}
-          menu={{
-            style: {minWidth: '100px'},
-            items: [
-              {
-                key: 'delete',
-                label: '删除',
-                onClick: () => handleDelete(record),
-              },
-            ],
-          }}
-          onClick={() => editorRef.current?.open(record.id)}
-        >
-          编辑
-        </Dropdown.Button>
+        <Space.Compact>
+          <Button
+            size="small"
+            onClick={() => editorRef.current?.open(record.id)}
+          >
+            编辑
+          </Button>
+          <Dropdown
+            trigger={['click']}
+            menu={{
+              style: { minWidth: '100px' },
+              items: [
+                {
+                  key: 'delete',
+                  label: '删除',
+                  onClick: () => handleDelete(record),
+                },
+              ],
+            }}
+          >
+            <Button
+              size="small"
+              icon={<EllipsisOutlined />}
+            />
+          </Dropdown>
+        </Space.Compact>
       ),
     },
   ];
