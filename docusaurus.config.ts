@@ -44,7 +44,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/WebGhan/Linian-React-Admin-Guide/tree/main/',
+            'https://github.com/WebGhan/react-admin-guide/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -73,7 +73,7 @@ const config: Config = {
         //   label: '文档',
         // },
         {
-          href: 'https://github.com/WebGhan/Linian-React-Admin-Guide',
+          href: 'https://github.com/WebGhan/react-admin-guide',
           label: 'GitHub',
           position: 'right',
         },
