@@ -225,7 +225,7 @@ ProTable 需要我们传入一个查询方法，该方法接受 pagination（分
 ```tsx
 function useQueryHook({pagination, filter}: QueryDataParams<ExampleTemplateQueryParams>) {
   return useExampleTemplates({
-    page: pagination?.current,
+    page: pagination?.page,
     per_page: pagination?.pageSize,
     ...filter,
   });
@@ -544,13 +544,12 @@ import Creator, {type CreatorRef} from '@/views/example/template/components/Crea
 import Editor, {type EditorRef} from '@/views/example/template/components/Editor.tsx';
 import {Button, Dropdown, Form, Input, Space} from 'antd';
 import {EllipsisOutlined, PlusOutlined} from '@ant-design/icons';
-import {PlusOutlined} from '@ant-design/icons';
 import type {ExampleTemplate, ExampleTemplateQueryParams} from '@/types/example/template.ts';
 import {
   useDeleteExampleTemplate,
   useExampleTemplates,
 } from '@/api/query-hooks/example/template.ts';
-import useCountdownConfirm from '@/components/business/confirmation/useCountdownConfirm.tsx';
+import useCountdownConfirm from '@/components/business/confirmations/useCountdownConfirm.tsx';
 
 function ExampleTemplateView() {
   const creatorRef = useRef<CreatorRef>(null);
@@ -730,7 +729,7 @@ function Creator({ref}: CreatorProps) {
       title="添加示例模版"
       width={500}
       open={isModalOpen}
-      maskClosable={false}
+      mask={{ closable: false }}
       confirmLoading={createExampleTemplate.isPending}
       onOk={() => form.submit()}
       onCancel={() => setIsModalOpen(false)}
@@ -849,7 +848,7 @@ function Editor({ref}: EditorProps) {
       width={500}
       open={isModalOpen}
       loading={isFetching}
-      maskClosable={false}
+      mask={{ closable: false }}
       confirmLoading={updateUpdateExampleTemplate.isPending}
       onOk={() => form.submit()}
       onCancel={() => setIsModalOpen(false)}
