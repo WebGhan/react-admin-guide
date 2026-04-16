@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'React-Admin 项目指南',
+  title: 'React Admin 项目指南',
   tagline: '',
   favicon: 'img/favicon.ico',
 
@@ -18,12 +18,12 @@ const config: Config = {
   url: 'https://webghan.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Linian-React-Admin-Guide/',
+  baseUrl: '/react-admin-guide/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'WebGhan', // Usually your GitHub org/user name.
-  projectName: 'Linian-React-Admin-Guide', // Usually your repo name.
+  projectName: 'react-admin-guide', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
