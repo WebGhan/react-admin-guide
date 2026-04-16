@@ -226,7 +226,7 @@ ProTable 需要我们传入一个查询方法，该方法接受 pagination（分
 function useQueryHook({pagination, filter}: QueryDataParams<ExampleTemplateQueryParams>) {
   return useExampleTemplates({
     page: pagination?.page,
-    per_page: pagination?.pageSize,
+    pageSize: pagination?.pageSize,
     ...filter,
   });
 }
@@ -559,8 +559,8 @@ function ExampleTemplateView() {
 
   function useQueryHook({pagination, filter}: QueryDataParams<ExampleTemplateQueryParams>) {
     return useExampleTemplates({
-      page: pagination?.current,
-      per_page: pagination?.pageSize,
+      page: pagination?.page,
+      pageSize: pagination?.pageSize,
       ...filter,
     });
   }
