@@ -451,7 +451,7 @@ export function updateExampleTemplate({id, data}: { id: number; data: ExampleTem
 export function deleteExampleTemplate(id: number) {
   return request({
     url: `/example/template/${id}/delete`,
-    method: 'POST',
+    method: 'DELETE',
   });
 }
 ```
